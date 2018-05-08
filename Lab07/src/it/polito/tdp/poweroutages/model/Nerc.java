@@ -1,13 +1,23 @@
 package it.polito.tdp.poweroutages.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nerc {
 
 	private int id;
 	private String value;
+	private List<PowerOutage> outages;
 
 	public Nerc(int id, String value) {
 		this.id = id;
 		this.value = value;
+		outages=new ArrayList<>();
+	}
+	
+	public void setPO(List<PowerOutage> po)
+	{
+		outages=po;
 	}
 
 	public int getId() {
@@ -24,6 +34,11 @@ public class Nerc {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+	
+	public List<PowerOutage> getPO()
+	{
+		return outages;
 	}
 
 	@Override
